@@ -1,11 +1,16 @@
 $( function() {
   "use strict";
 
+  $( ".sendButton" ).on( "click", function() {
+  var userMessage = $('.textBox[name="message"]').val().split( " " );
+  // thank you, http://stackoverflow.com/questions/867916/creating-a-div-element-in-jquery
+  $( "<div></div>" ).attr( "class", "userTalkBubble" ).append( userMessage ).appendTo( "main" );
+  console.log( userMessage );
 /*******************************************************************
   DISPLAY GIPHY
 *******************************************************************/
 
-else if( userMessage[0].toLowerCase() === "@giphy" ) {
+if( userMessage[0].toLowerCase() === "@giphy" ) {
   console.log( "Entering giphy" );
 
   // begin giphy GET request
@@ -23,4 +28,5 @@ else if( userMessage[0].toLowerCase() === "@giphy" ) {
     $( ".textBox" ).val( "" );
   }) // end done()
 } // end else if giphy
+})
 }) // end outmost function

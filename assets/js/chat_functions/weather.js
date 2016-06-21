@@ -1,12 +1,17 @@
 $( function() {
   "use strict";
 
+  $( ".sendButton" ).on( "click", function() {
+  var userMessage = $('.textBox[name="message"]').val().split( " " );
+  // thank you, http://stackoverflow.com/questions/867916/creating-a-div-element-in-jquery
+  $( "<div></div>" ).attr( "class", "userTalkBubble" ).append( userMessage ).appendTo( "main" );
+  console.log( userMessage );
 /*******************************************************************
   DISPLAY WUNDERGROUND
 *******************************************************************/
 // setting up values to pass meetup in ajax call
 
-else if( userMessage[0].toLowerCase() === "@weather" ) {
+if( userMessage[0].toLowerCase() === "@weather" ) {
   console.log( "wunderground called" );
   // $( "main" ).css( "background-color", userMessage[1] );
   // $( "<div></div>" ).attr( "class", "botTalkBubble" ).append( "Here's your weather: " ).appendTo( "main" );
@@ -46,4 +51,5 @@ $.ajax( {
 
 } //end else if wunderground
 
-}) // end outmost function
+})
+})// end outmost function

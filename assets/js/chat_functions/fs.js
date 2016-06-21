@@ -1,11 +1,18 @@
 $( function() {
   "use strict";
 
+
+
+$( ".sendButton" ).on( "click", function() {
+  var userMessage = $('.textBox[name="message"]').val().split( " " );
+  // thank you, http://stackoverflow.com/questions/867916/creating-a-div-element-in-jquery
+  $( "<div></div>" ).attr( "class", "userTalkBubble" ).append( userMessage ).appendTo( "main" );
+  console.log( userMessage );
 /*******************************************************************
   DISPLAY FOURSQUARE RESTAURANT
 *******************************************************************/
 
-else if( userMessage[0].toLowerCase() === "@fs" ) {
+  if( userMessage[0].toLowerCase() === "@fs" ) {
   console.log( "Entering FourSquare" );
   var location = userMessage[1];
   var cuisine = userMessage[2];
@@ -38,5 +45,5 @@ else if( userMessage[0].toLowerCase() === "@fs" ) {
     $( ".textBox" ).val( "" );
   }) // end done()
 } // end else if foursquare
-
+})
 }) // end outmost function

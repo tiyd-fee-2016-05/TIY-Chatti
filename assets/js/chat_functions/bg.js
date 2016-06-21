@@ -1,5 +1,12 @@
 $( function() {
   "use strict";
+
+
+    $( ".sendButton" ).on( "click", function() {
+      var userMessage = $('.textBox[name="message"]').val().split( " " );
+      // thank you, http://stackoverflow.com/questions/867916/creating-a-div-element-in-jquery
+      $( "<div></div>" ).attr( "class", "userTalkBubble" ).append( userMessage ).appendTo( "main" );
+      console.log( userMessage );
   /*******************************************************************
     CHANGE BACKGROUND-COLOR
   *******************************************************************/
@@ -10,4 +17,5 @@ $( function() {
     $( "<div></div>" ).attr( "class", "botTalkBubble" ).append( "Excellent color choice!" ).appendTo( "main" );
     $( ".textBox" ).val( "" ); // reset textbox to placeholder value
     }
+  })
 }) // end outmost function
