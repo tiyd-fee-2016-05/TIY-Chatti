@@ -17,7 +17,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 15EM
 
   main {
     overflow: auto;
-    height: 33.25em; }
+    height: 37em; }
 
   header,
   footer {
@@ -26,12 +26,11 @@ BEGIN MEDIA QUERY MIN-WIDTH 15EM
 
   h1 {
     padding-top: 1.5em;
-    font-family: cursive;
+    padding-bottom: .75em;
+    border-bottom: 1.5px solid #d3d3d3;
+    font-family: arial;
     font-size: 1.6em;
     font-weight: 700; }
-
-  .logo {
-    width: 5em; }
 
   .botTalkBubble {
     width: auto;
@@ -67,9 +66,6 @@ BEGIN MEDIA QUERY MIN-WIDTH 15EM
   footer {
     padding-top: 1.15em;
     border-top: 1.5px solid #d3d3d3; }
-
-  .fa-camera {
-    color: grey; }
 
   .textBox {
     width: 10em;
@@ -108,7 +104,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 26EM
 
   main {
     overflow: auto;
-    height: 31.1em; }
+    height: 35em; }
 
   header,
   footer {
@@ -117,12 +113,11 @@ BEGIN MEDIA QUERY MIN-WIDTH 26EM
 
   h1 {
     padding-top: 1.5em;
-    font-family: cursive;
+    padding-bottom: .75em;
+    border-bottom: 1.5px solid #d3d3d3;
+    font-family: arial;
     font-size: 2em;
     font-weight: 700; }
-
-  .logo {
-    width: 6em; }
 
   .botTalkBubble {
     width: auto;
@@ -134,7 +129,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 26EM
     margin-top: .75em;
     margin-left: .5em;
     font-family: arial;
-    font-size: 1.1em; }
+    font-size: 1.3em; }
 
   .userTalkBubble {
     width: 73.68421%;
@@ -148,7 +143,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 26EM
     margin-top: .75em;
     margin-right: .5em;
     font-family: arial;
-    font-size: 1.1em;
+    font-size: 1.3em;
     color: #fff; }
 
   img {
@@ -157,18 +152,15 @@ BEGIN MEDIA QUERY MIN-WIDTH 26EM
   .weatherIcon {
     width: 2em; }
 
-  .fa-camera {
-    color: grey; }
-
   footer {
     padding-top: 1.15em;
     border-top: 1.5px solid #d3d3d3; }
 
   .textBox {
     width: 10em;
-    height: 1.5em;
+    height: 1.8em;
     border-radius: .9em;
-    font-size: 1.35em;
+    font-size: 1.45em;
     margin: 0 .4em .75em .55em; }
 
   .textBox:focus {
@@ -176,7 +168,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 26EM
 
   .sendButton {
     margin-top: .31em;
-    font-size: 1.35em;
+    font-size: 1.45em;
     color: grey;
     font-family: Arial;
     cursor: pointer; } }
@@ -198,7 +190,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 37.5EM
 
   main {
     overflow: auto;
-    height: 29.5em; }
+    height: 34em; }
 
   header,
   footer {
@@ -207,7 +199,9 @@ BEGIN MEDIA QUERY MIN-WIDTH 37.5EM
 
   h1 {
     padding-top: 1.5em;
-    font-family: cursive;
+    padding-bottom: .75em;
+    border-bottom: 1.5px solid #d3d3d3;
+    font-family: arial;
     font-size: 2.25em;
     font-weight: 700; }
 
@@ -283,7 +277,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 48EM -- TABLET SIZE
 
   main {
     overflow: auto;
-    height: 28.5em; }
+    height: 33.25em; }
 
   header,
   footer {
@@ -292,7 +286,9 @@ BEGIN MEDIA QUERY MIN-WIDTH 48EM -- TABLET SIZE
 
   h1 {
     padding-top: 1.5em;
-    font-family: cursive;
+    padding-bottom: .75em;
+    border-bottom: 1.5px solid #d3d3d3;
+    font-family: arial;
     font-size: 2.5em;
     font-weight: 700; }
 
@@ -324,7 +320,8 @@ BEGIN MEDIA QUERY MIN-WIDTH 48EM -- TABLET SIZE
     color: #fff; }
 
   img {
-    width: 14.75em; }
+    width: 14.75em;
+    margin: 1em 0 1em 1em; }
 
   .weatherIcon {
     width: 2.25em; }
@@ -354,7 +351,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 48EM -- TABLET SIZE
 BEGIN MEDIA QUERY MIN-WIDTH 80EM -- LAPTOP SIZE
 *******************************************************************************
 ******************************************************************************/
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 80em) {
   .wrapper {
     max-width: 100%;
     margin-left: auto;
@@ -368,33 +365,52 @@ BEGIN MEDIA QUERY MIN-WIDTH 80EM -- LAPTOP SIZE
 
   main {
     overflow: auto;
-    height: 29.5em; }
+    height: 40.75em; }
 
   header,
   footer {
     background-color: #F3F5F5;
     text-align: center; }
 
+  header {
+    width: 21.05263%;
+    float: left;
+    margin-right: 5.26316%;
+    width: 30em;
+    height: 47.5em;
+    float: left; }
+
+  footer {
+    width: 73.68421%;
+    float: left;
+    margin-right: 5.26316%;
+    width: 50em;
+    float: right; }
+
   h1 {
     padding-top: 1.5em;
-    font-family: cursive;
+    padding-bottom: .75em;
+    font-family: arial;
     font-size: 2.5em;
     font-weight: 700; }
 
   .botTalkBubble {
-    width: auto;
+    width: 73.68421%;
+    float: left;
+    margin-right: 5.26316%;
     background-color: #d3d3d3;
     float: left;
     text-align: left;
     border-radius: 1em;
-    padding: .65em;
     margin-top: .75em;
     margin-left: .5em;
     font-family: arial;
-    font-size: 1.35em; }
+    font-size: 1.75em; }
 
   .userTalkBubble {
-    width: 55%;
+    width: 73.68421%;
+    float: left;
+    margin-right: 5.26316%;
     background-color: #0CA3E1;
     float: right;
     text-align: right;
@@ -403,11 +419,12 @@ BEGIN MEDIA QUERY MIN-WIDTH 80EM -- LAPTOP SIZE
     margin-top: .75em;
     margin-right: .5em;
     font-family: arial;
-    font-size: 1.35em;
+    font-size: 1.75em;
     color: #fff; }
 
   img {
-    width: 14.75em; }
+    width: 14.75em;
+    margin: 1em 0 1em 1em; }
 
   .weatherIcon {
     width: 2.25em; }
@@ -420,8 +437,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 80EM -- LAPTOP SIZE
     width: 10em;
     height: 1.8em;
     border-radius: .9em;
-    font-size: 1.35em;
-    padding-left: .5em;
+    font-size: 1.85em;
     margin: 0 .4em .75em .55em; }
 
   .textBox:focus {
@@ -429,9 +445,9 @@ BEGIN MEDIA QUERY MIN-WIDTH 80EM -- LAPTOP SIZE
 
   .sendButton {
     margin-top: .31em;
-    font-size: 1.35em;
+    font-size: 1.85em;
     color: grey;
     font-family: Arial;
     cursor: pointer; } }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles2.css.map */

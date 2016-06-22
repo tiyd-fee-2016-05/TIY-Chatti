@@ -1,9 +1,17 @@
 $( function() {
   "use strict";
 
-    $( ".sendButton" ).on( "click", function() {
-      var userMessage = $('.textBox[name="message"]').val().split( " " );
-      // thank you, http://stackoverflow.com/questions/867916/creating-a-div-element-in-jquery
+  $( ".textBox" ).keypress( function(e) {
+  if(e.which == 13) {
+    $( ".sendButton" ).click();
+    // e.preventDefault();
+  }
+}); // end enter keypress event
+
+$( ".sendButton" ).on( "click", function(e) {
+  e.preventDefault();
+  var userMessage = $('.textBox[name="message"]').val().split( " " );
+  var userMessageUnsplit = $('.textBox[name="message"]').val();
 
   /*******************************************************************
     CHANGE BACKGROUND-COLOR
@@ -16,7 +24,9 @@ $( function() {
     console.log( "Entering background-color" );
     $( "main" ).css( "background-color", userMessage[1] );
     $( "<div></div>" ).attr( "class", "botTalkBubble" ).append( "Excellent color choice!" ).appendTo( "main" );
+    $( 'main' ).animate( {scrollTop:$(document).height()}, 'slow' );
     $( ".textBox" ).val( "" ); // reset textbox to placeholder value
+    $( ".textBox" ).focus();
     }
   })
 }) // end outmost function

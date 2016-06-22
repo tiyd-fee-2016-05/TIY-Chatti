@@ -27,7 +27,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 15EM
 
   main {
     overflow: auto;
-    height: 33.25em;
+    height: 37em;
   }
 
   header,
@@ -38,13 +38,11 @@ BEGIN MEDIA QUERY MIN-WIDTH 15EM
 
   h1 {
     padding-top: $h1TexboxTopMarg;
-    font-family: cursive;
+    padding-bottom: .75em;
+    border-bottom: 1.5px solid $botBg;
+    font-family: $chatFont;
     font-size: 1.6em;
     font-weight: 700;
-  }
-
-  .logo {
-    width: 5em;
   }
 
   .botTalkBubble {
@@ -86,10 +84,6 @@ BEGIN MEDIA QUERY MIN-WIDTH 15EM
     border-top: 1.5px solid $botBg;
   }
 
-  .fa-camera {
-    color:grey;
-  }
-
   .textBox {
     width: 10em;
     height: 1.8em;
@@ -118,7 +112,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 26EM
 *******************************************************************************
 ******************************************************************************/
 
-$bubbleFontSize: 1.1em;
+$bubbleFontSize: 1.3em;
 
 @media screen and (min-width: 26em) {
 
@@ -135,7 +129,7 @@ $bubbleFontSize: 1.1em;
 
   main {
     overflow: auto;
-    height: 31.1em;
+    height: 35em;
   }
 
   header,
@@ -146,13 +140,11 @@ $bubbleFontSize: 1.1em;
 
   h1 {
     padding-top: $h1TexboxTopMarg;
-    font-family: cursive;
+    padding-bottom: .75em;
+    border-bottom: 1.5px solid $botBg;
+    font-family: $chatFont;
     font-size: 2em;
     font-weight: 700;
-  }
-
-  .logo {
-    width: 6em;
   }
 
   .botTalkBubble {
@@ -191,10 +183,6 @@ $bubbleFontSize: 1.1em;
     width: 2em;
   }
 
-  .fa-camera {
-    color:grey;
-  }
-
   footer {
     padding-top: 1.15em;
     border-top: 1.5px solid $botBg;
@@ -202,9 +190,9 @@ $bubbleFontSize: 1.1em;
 
   .textBox {
     width: 10em;
-    height: 1.5em;
+    height: 1.8em;
     border-radius: .9em;
-    font-size: 1.35em;
+    font-size: 1.45em;
     margin: 0 .4em .75em .55em;
   }
 
@@ -214,7 +202,7 @@ $bubbleFontSize: 1.1em;
 
   .sendButton {
     margin-top: .31em;
-    font-size: 1.35em;
+    font-size: 1.45em;
     color:grey;
     font-family: Arial;
     cursor: pointer;
@@ -243,7 +231,7 @@ $bubbleFontSize: 1.5em;
 
   main {
     overflow: auto;
-    height: 29.5em;
+    height: 34em;
   }
 
   header,
@@ -254,8 +242,9 @@ $bubbleFontSize: 1.5em;
 
   h1 {
     padding-top: $h1TexboxTopMarg;
-    // border-bottom: 1.5px solid $botBg;
-    font-family: cursive;
+    padding-bottom: .75em;
+    border-bottom: 1.5px solid $botBg;
+    font-family: $chatFont;
     font-size: 2.25em;
     font-weight: 700;
   }
@@ -345,7 +334,7 @@ $bubbleFontSize: 1.75em;
 
   main {
     overflow: auto;
-    height: 28.5em;
+    height: 33.25em;
   }
 
   header,
@@ -356,8 +345,9 @@ $bubbleFontSize: 1.75em;
 
   h1 {
     padding-top: $h1TexboxTopMarg;
-    // border-bottom: 1.5px solid $botBg;
-    font-family: cursive;
+    padding-bottom: .75em;
+    border-bottom: 1.5px solid $botBg;
+    font-family: $chatFont;
     font-size: 2.5em;
     font-weight: 700;
   }
@@ -392,6 +382,7 @@ $bubbleFontSize: 1.75em;
 
   img {
     width: 14.75em;
+    margin: 1em 0 1em 1em;
   }
 
   .weatherIcon {
@@ -430,9 +421,9 @@ BEGIN MEDIA QUERY MIN-WIDTH 80EM -- LAPTOP SIZE
 *******************************************************************************
 ******************************************************************************/
 
-$bubbleFontSize: 1.35em;
+$bubbleFontSize: 1.75em;
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 80em) {
 
   $susy: (
     columns: 4,
@@ -447,7 +438,7 @@ $bubbleFontSize: 1.35em;
 
   main {
     overflow: auto;
-    height: 29.5em;
+    height: 40.75em;
   }
 
   header,
@@ -456,22 +447,33 @@ $bubbleFontSize: 1.35em;
     text-align: center;
   }
 
+  header {
+    @include span( 1 of 4 ); // each will take up 1 column
+    width: 30em;
+    height: 47.5em;
+    float: left;
+  }
+
+  footer {
+    @include span( 3 of 4 ); // each will take up 3 columns
+    width: 50em;
+    float: right;
+  }
+
   h1 {
     padding-top: $h1TexboxTopMarg;
-    // border-bottom: 1.5px solid $botBg;
-    font-family: cursive;
+    padding-bottom: .75em;
+    font-family: $chatFont;
     font-size: 2.5em;
     font-weight: 700;
   }
 
   .botTalkBubble {
-    // @include span( 3 of 4 ); // each li will take up 3 columns
-    width: auto;
+    @include span( 3 of 4 ); // each will take up 3 columns
     background-color: $botBg;
     float: left;
     text-align: left;
     border-radius: 1em;
-    padding:.65em;
     margin-top: .75em;
     margin-left: .5em;
     font-family: $chatFont;
@@ -479,8 +481,7 @@ $bubbleFontSize: 1.35em;
   }
 
   .userTalkBubble{
-    // @include span( 3 of 4 ); // each li will take up 3 columns
-    width: 55%;
+    @include span( 3 of 4 ); // each will take up 3 columns
     background-color: $userBg;
     float: right;
     text-align: right;
@@ -495,6 +496,7 @@ $bubbleFontSize: 1.35em;
 
   img {
     width: 14.75em;
+    margin: 1em 0 1em 1em;
   }
 
   .weatherIcon {
@@ -510,8 +512,7 @@ $bubbleFontSize: 1.35em;
     width: 10em;
     height: 1.8em;
     border-radius: .9em;
-    font-size: 1.35em;
-    padding-left: .5em;
+    font-size: 1.85em;
     margin: 0 .4em .75em .55em;
   }
 
@@ -521,134 +522,9 @@ $bubbleFontSize: 1.35em;
 
   .sendButton {
     margin-top: .31em;
-    font-size: 1.35em;
+    font-size: 1.85em;
     color:grey;
     font-family: Arial;
     cursor: pointer;
   }
 } // end media query min-width 80em
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $bubbleFontSize: 1.75em;
-//
-// @media screen and (min-width: 80em) {
-//
-//   $susy: (
-//     columns: 4,
-//     container: 16em
-//   );
-//
-//   .wrapper {
-//     @include container;
-//     border: 2em solid yellow;
-//     box-sizing: border-box;
-//     margin-top: -1em;
-//   } // end .wrapper
-//
-//   main {
-//     overflow: auto;
-//     // height: 2.75em;
-//   }
-//
-//   header,
-//   footer {
-//     background-color: $headerFooterBg;
-//     text-align: center;
-//   }
-//
-//   header {
-//     @include span( 1 of 4 ); // each will take up 1 column
-//     width: 30em;
-//     height: 47.5em;
-//     float: left;
-//   }
-//
-//   footer {
-//     @include span( 3 of 4 ); // each will take up 3 columns
-//     position: relative;
-//     bottom: 6.5em;
-//     left: 4em;
-//     width: 66%;
-//     float: right;
-//   }
-//
-//   h1 {
-//     padding-top: $h1TexboxTopMarg;
-//     padding-bottom: .75em;
-//     font-family: $chatFont;
-//     font-size: 2.5em;
-//     font-weight: 700;
-//   }
-//
-//   .botTalkBubble {
-//     @include span( 3 of 4 ); // each will take up 3 columns
-//     background-color: $botBg;
-//     float: left;
-//     text-align: left;
-//     border-radius: 1em;
-//     margin-top: .75em;
-//     margin-left: .5em;
-//     font-family: $chatFont;
-//     font-size: $bubbleFontSize;
-//   }
-//
-//   .userTalkBubble{
-//     @include span( 3 of 4 ); // each will take up 3 columns
-//     background-color: $userBg;
-//     float: right;
-//     text-align: right;
-//     border-radius: 1em;
-//     padding:.63em;
-//     margin-top: .75em;
-//     margin-right: .5em;
-//     font-family: $chatFont;
-//     font-size: $bubbleFontSize;
-//     color: #fff;
-//   }
-//
-//   img {
-//     width: 14.75em;
-//     margin: 1em 0 1em 1em;
-//   }
-//
-//   .weatherIcon {
-//     width: 2.25em;
-//   }
-//
-//   footer {
-//     padding-top: 1.15em;
-//     // border-top: 1.5px solid $botBg;
-//   }
-//
-//   .textBox {
-//     width: 10em;
-//     height: 1.8em;
-//     border-radius: .9em;
-//     font-size: 1.85em;
-//     margin: 0 .4em .75em .55em;
-//   }
-//
-//   .textBox:focus {
-//     outline: none; // thank you, http://stackoverflow.com/questions/3397113/how-to-remove-border-outline-around-text-input-boxes-chrome
-//   }
-//
-//   .sendButton {
-//     margin-top: .31em;
-//     font-size: 1.85em;
-//     color:grey;
-//     font-family: Arial;
-//     cursor: pointer;
-//   }

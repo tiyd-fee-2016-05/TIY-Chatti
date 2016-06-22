@@ -1,56 +1,78 @@
 $( function() {
   "use strict";
 
-  $( ".sendButton" ).on( "click", function() {
-  var userMessage = $('.textBox[name="message"]').val().split( " " );
-  // thank you, http://stackoverflow.com/questions/867916/creating-a-div-element-in-jquery
+  $( ".textBox" ).keypress( function(e) {
+    if(e.which == 13) {
+      $( ".sendButton" ).click();
+      e.preventDefault();
+    }
+  }); // end enter keypress event
 
-/*******************************************************************
-  DISPLAY WUNDERGROUND
-*******************************************************************/
-// setting up values to pass meetup in ajax call
+  $
 
-if( userMessage[0].toLowerCase() === "@weather" ) {
-  console.log( "user entered weather" );
-  $( "<div></div>" ).attr( "class", "userTalkBubble" ).append( userMessage ).appendTo( "main" );
-  console.log( userMessage );
-  // $( "main" ).css( "background-color", userMessage[1] );
-  // $( "<div></div>" ).attr( "class", "botTalkBubble" ).append( "Here's your weather: " ).appendTo( "main" );
-  $( ".textBox" ).val( "" ); // reset textbox to placeholder value
+  $( ".sendButton" ).on( "click", function(e) {
+    e.preventDefault();
 
+    var randomNum = Math.floor( (Math.random() * 10) + 1 );
+    var userMessage = $('.textBox[name="message"]').val().split( " " );
+    var userMessageUnsplit = $('.textBox[name="message"]').val();
+    // thank you, http://stackoverflow.com/questions/867916/creating-a-div-element-in-jquery
 
-var params = {
-  // features:conditions,
-  query:userMessage[0],
+    /*******************************************************************
+      DISPLAY WUNDERGROUND
+    *******************************************************************/
 
-}; // end params
+      if( userMessage[0].toLowerCase() === "@weather" ) {
+        $( "<div></div>" ).attr( "class", "userTalkBubble" ).append( userMessageUnsplit ).appendTo( "main" );
+        console.log( userMessage );
+        $( ".textBox" ).focus();
+        console.log( "Entering Wunderground" );
+        var weatherCity;
+        var weatherState;
 
-$.ajax( {
-  datatype: "json",
-  // url:"http://api.wunderground.com/api/a4a7ba047e303c3b/alerts/q/IA/Des_Moines.json"
-  url: "http://api.wunderground.com/api/a4a7ba047e303c3b/conditions/q/" + userMessage[1] + ".json",
-  // url: "http://autocomplete.wunderground.com/aq?query=",
-  // url: "http://api.wunderground.com/api/a4a7ba047e303c3b/features/q/query.format",
-  // url: "http://api.wunderground.com/api/a4a7ba047e303c3b/features/q/query",
-  method: "GET",
-  data: params // params defined above
-} ) // end ajax GET request
+      if( userMessage[1].includes( "," ) ) {
+        console.log( "comma in string" );
+        console.log( userMessage[1].substr( 0, userMessage[1].length - 1 ));
+        if( userMessage.length == 2 ) {
+          var locationNoComma = userMessage[1].split( "," );
+          console.log( locationNoComma );
+          weatherCity = locationNoComma[0];
+          weatherState = locationNoComma[1];
+        }
 
-// if request is successful
+        else {
+          weatherCity = userMessage[1];
+          weatherState = userMessage[2];
+        }
+      } // end if
 
+      else {
+        console.log( "Else entered" );
+        weatherCity = userMessage[1] + ",";
+        weatherState = userMessage[2];
+      }
 
-.done( function(data) {
-  var tempFeelsLike = data.current_observation.feelslike_string;
-  var weatherIcon = $( "<img>" ).attr( "src", data.current_observation.icon_url);
-  var weatherSting = $( "<div></div>" ).attr( "class", "botTalkBubble" ).text( "Here's the weather in " + tempFeelsLike);
+      // begin foursquare GET request
+      $.ajax( {
+        datatype: "json",
+        url: "http://api.wunderground.com/api/a4a7ba047e303c3b/conditions/q/" + weatherState + "/" + weatherCity + ".json",
+        method: "GET",
+      } ) // end ajax GET request
 
-  weatherSting.prepend(weatherIcon).appendTo('main');
-  $( ".textBox" ).val( "" ); // reset textbox to placeholder value
-  console.log(data.current_observation.feelslike_string
-  );
-}) // end done()
+      // if request is successful
+      .done( function(data) {
+        var currentTemp = data.current_observation.feelslike_string;
+        var weatherIcon = $( "<img>" ).attr( "src", data.current_observation.icon_url ).addClass( "weatherIcon");
+        console.log( "http://api.wunderground.com/api/a4a7ba047e303c3b/conditions/q/" + userMessage[1] + ".json" );
+        console.log( currentTemp );
+        console.log( data.current_observation.icon_url );
+        var weatherString = $( "<div></div>" ).attr( "class", "botTalkBubble" ).text( "Your weather is a comfortable " + currentTemp + " ");
+        weatherString.prepend( weatherIcon ).appendTo( "main" );
 
-} //end else if wunderground
-
-})
-})// end outmost function
+        // thank you http://www.electrictoolbox.com/jquery-scroll-bottom/ for your help
+        $('main').animate( {scrollTop:$(document).height()}, 'slow' );
+        $( ".textBox" ).val( "" );
+      }) // end done()
+    } // end else if wunderground
+  })// end click event
+}) // end outer function
