@@ -17,7 +17,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 15EM
 
   main {
     overflow: auto;
-    height: 21.65em; }
+    height: 37em; }
 
   header,
   footer {
@@ -107,7 +107,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 26EM
 
   main {
     overflow: auto;
-    height: 22.65em; }
+    height: 35em; }
 
   header,
   footer {
