@@ -197,7 +197,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 37.5EM
 
   main {
     overflow: auto;
-    height: 27em; }
+    height: 34em; }
 
   header,
   footer {
@@ -270,7 +270,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 37.5EM
     cursor: pointer; } }
 /******************************************************************************
 *******************************************************************************
-BEGIN MEDIA QUERY MIN-WIDTH 48EM
+BEGIN MEDIA QUERY MIN-WIDTH 48EM -- TABLET SIZE
 *******************************************************************************
 ******************************************************************************/
 @media screen and (min-width: 48em) {
@@ -311,6 +311,109 @@ BEGIN MEDIA QUERY MIN-WIDTH 48EM
     text-align: left;
     border-radius: 1em;
     padding: .65em;
+    margin-top: .75em;
+    margin-left: .5em;
+    font-family: arial;
+    font-size: 1.75em; }
+
+  .userTalkBubble {
+    width: 73.68421%;
+    float: left;
+    margin-right: 5.26316%;
+    background-color: #0CA3E1;
+    float: right;
+    text-align: right;
+    border-radius: 1em;
+    padding: .63em;
+    margin-top: .75em;
+    margin-right: .5em;
+    font-family: arial;
+    font-size: 1.75em;
+    color: #fff; }
+
+  img {
+    width: 14.75em;
+    margin: 1em 0 1em 1em; }
+
+  .weatherIcon {
+    width: 2.25em; }
+
+  footer {
+    padding-top: 1.15em;
+    border-top: 1.5px solid #d3d3d3; }
+
+  .textBox {
+    width: 10em;
+    height: 1.8em;
+    border-radius: .9em;
+    font-size: 1.85em;
+    margin: 0 .4em .75em .55em; }
+
+  .textBox:focus {
+    outline: none; }
+
+  .sendButton {
+    margin-top: .31em;
+    font-size: 1.85em;
+    color: grey;
+    font-family: Arial;
+    cursor: pointer; } }
+/******************************************************************************
+*******************************************************************************
+BEGIN MEDIA QUERY MIN-WIDTH 80EM -- LAPTOP SIZE
+*******************************************************************************
+******************************************************************************/
+@media screen and (min-width: 80em) {
+  .wrapper {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    margin-top: -1em; }
+    .wrapper:after {
+      content: " ";
+      display: block;
+      clear: both; }
+
+  main {
+    overflow: auto;
+    height: 40.75em; }
+
+  header,
+  footer {
+    background-color: #F3F5F5;
+    text-align: center; }
+
+  header {
+    width: 21.05263%;
+    float: left;
+    margin-right: 5.26316%;
+    width: 30em;
+    height: 47.5em;
+    float: left; }
+
+  footer {
+    width: 73.68421%;
+    float: left;
+    margin-right: 5.26316%;
+    width: 50em;
+    float: right; }
+
+  h1 {
+    padding-top: 1.5em;
+    padding-bottom: .75em;
+    font-family: arial;
+    font-size: 2.5em;
+    font-weight: 700; }
+
+  .botTalkBubble {
+    width: 73.68421%;
+    float: left;
+    margin-right: 5.26316%;
+    background-color: #d3d3d3;
+    float: left;
+    text-align: left;
+    border-radius: 1em;
     margin-top: .75em;
     margin-left: .5em;
     font-family: arial;
