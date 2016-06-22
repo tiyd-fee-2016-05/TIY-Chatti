@@ -33,9 +33,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 15EM
     font-weight: 700; }
 
   .botTalkBubble {
-    width: 73.68421%;
-    float: left;
-    margin-right: 5.26316%;
+    width: auto;
     background-color: #d3d3d3;
     float: left;
     text-align: left;
@@ -60,8 +58,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 15EM
     color: #fff; }
 
   img {
-    width: 11em;
-    margin: 1em 0 1em 1em; }
+    width: 12.5em; }
 
   .weatherIcon {
     width: 2em; }
@@ -123,9 +120,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 26EM
     font-weight: 700; }
 
   .botTalkBubble {
-    width: 73.68421%;
-    float: left;
-    margin-right: 5.26316%;
+    width: auto;
     background-color: #d3d3d3;
     float: left;
     text-align: left;
@@ -152,8 +147,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 26EM
     color: #fff; }
 
   img {
-    width: 12.5em;
-    margin: 1em 0 1em 1em; }
+    width: 13.5em; }
 
   .weatherIcon {
     width: 2em; }
@@ -188,8 +182,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 37.5EM
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    box-sizing: border-box;
-    margin-top: -1em; }
+    box-sizing: border-box; }
     .wrapper:after {
       content: " ";
       display: block;
@@ -213,9 +206,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 37.5EM
     font-weight: 700; }
 
   .botTalkBubble {
-    width: 73.68421%;
-    float: left;
-    margin-right: 5.26316%;
+    width: auto;
     background-color: #d3d3d3;
     float: left;
     text-align: left;
@@ -242,8 +233,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 37.5EM
     color: #fff; }
 
   img {
-    width: 14.5em;
-    margin: 1em 0 1em 1em; }
+    width: 14.5em; }
 
   .weatherIcon {
     width: 2em; }
@@ -303,9 +293,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 48EM -- TABLET SIZE
     font-weight: 700; }
 
   .botTalkBubble {
-    width: 73.68421%;
-    float: left;
-    margin-right: 5.26316%;
+    width: auto;
     background-color: #d3d3d3;
     float: left;
     text-align: left;

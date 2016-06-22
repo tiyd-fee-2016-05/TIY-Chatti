@@ -46,7 +46,8 @@ BEGIN MEDIA QUERY MIN-WIDTH 15EM
   }
 
   .botTalkBubble {
-    @include span( 3 of 4 ); // each li will take up 1 column
+    // @include span( 3 of 4 ); // each li will take up 1 column
+    width: auto;
     background-color: $botBg;
     float: left;
     text-align: left;
@@ -71,8 +72,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 15EM
   }
 
   img {
-    width: 11em;
-    margin: 1em 0 1em 1em;
+    width: 12.5em;
   }
 
   .weatherIcon {
@@ -148,7 +148,8 @@ $bubbleFontSize: 1.3em;
   }
 
   .botTalkBubble {
-    @include span( 3 of 4 ); // each li will take up 1 column
+    // @include span( 3 of 4 ); // each li will take up 1 column
+    width: auto;
     background-color: $botBg;
     float: left;
     text-align: left;
@@ -175,8 +176,7 @@ $bubbleFontSize: 1.3em;
   }
 
   img {
-    width: 12.5em;
-    margin: 1em 0 1em 1em;
+    width: 13.5em;
   }
 
   .weatherIcon {
@@ -227,7 +227,6 @@ $bubbleFontSize: 1.5em;
   .wrapper {
     @include container;
     box-sizing: border-box;
-    margin-top: -1em;
   } // end .wrapper
 
   main {
@@ -251,7 +250,8 @@ $bubbleFontSize: 1.5em;
   }
 
   .botTalkBubble {
-    @include span( 3 of 4 ); // each li will take up 1 column
+    // @include span( 3 of 4 ); // each li will take up 3 columns
+    width: auto;
     background-color: $botBg;
     float: left;
     text-align: left;
@@ -264,7 +264,7 @@ $bubbleFontSize: 1.5em;
   }
 
   .userTalkBubble{
-    @include span( 3 of 4 ); // each li will take up 1 column
+    @include span( 3 of 4 ); // each li will take up 3 columns
     background-color: $userBg;
     float: right;
     text-align: right;
@@ -279,7 +279,6 @@ $bubbleFontSize: 1.5em;
 
   img {
     width: 14.5em;
-    margin: 1em 0 1em 1em;
   }
 
   .weatherIcon {
@@ -354,7 +353,8 @@ $bubbleFontSize: 1.75em;
   }
 
   .botTalkBubble {
-    @include span( 3 of 4 ); // each li will take up 1 column
+    // @include span( 3 of 4 ); // each li will take up 3 columns
+    width: auto;
     background-color: $botBg;
     float: left;
     text-align: left;
@@ -367,7 +367,7 @@ $bubbleFontSize: 1.75em;
   }
 
   .userTalkBubble{
-    @include span( 3 of 4 ); // each li will take up 1 column
+    @include span( 3 of 4 ); // each li will take up 3 columns
     background-color: $userBg;
     float: right;
     text-align: right;
@@ -448,14 +448,14 @@ $bubbleFontSize: 1.75em;
   }
 
   header {
-    @include span( 1 of 4 ); // each li will take up 1 column
+    @include span( 1 of 4 ); // each will take up 1 column
     width: 30em;
     height: 47.5em;
     float: left;
   }
 
   footer {
-    @include span( 3 of 4 ); // each li will take up 1 column
+    @include span( 3 of 4 ); // each will take up 3 columns
     width: 50em;
     float: right;
   }
@@ -469,7 +469,7 @@ $bubbleFontSize: 1.75em;
   }
 
   .botTalkBubble {
-    @include span( 3 of 4 ); // each li will take up 1 column
+    @include span( 3 of 4 ); // each will take up 3 columns
     background-color: $botBg;
     float: left;
     text-align: left;
@@ -481,7 +481,7 @@ $bubbleFontSize: 1.75em;
   }
 
   .userTalkBubble{
-    @include span( 3 of 4 ); // each li will take up 1 column
+    @include span( 3 of 4 ); // each will take up 3 columns
     background-color: $userBg;
     float: right;
     text-align: right;
