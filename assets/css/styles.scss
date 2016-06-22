@@ -1,5 +1,4 @@
-
-
+@media screen and (min-width: 12em) {
 
 .wrapper{
 height:38.43em;
@@ -78,3 +77,85 @@ font-family: Arial;
   color:grey;
   font-family: Arial;
 }
+} // end media query 22.8em
+
+@media screen and (min-width: 23em) {
+
+.wrapper{
+height:38.43em;
+width:22.8em;
+border: solid 1px blue;
+}
+
+.botTalkBubble{
+  // width:15em;
+  background-color: #d3d3d3;
+  border-radius: 1em;
+  text-align: left;
+  float: left;
+  padding:.43em;
+  margin-top: .3em;
+  margin-left: .5em;
+  font-family: Arial;
+}
+
+.userTalkBubble{
+  width:15em;
+  background-color: #0CA3E1;
+  border-radius: 1em;
+  text-align: right;
+  float: right;
+  padding:.43em;
+  margin-top: .3em;
+  margin-right: .5em;
+  font-family: Arial;
+  color:white;
+  // font-family: $userFont;
+}
+header{
+background-color:  #F3F5F5;
+}
+
+.fa-camera{
+  color:grey;
+  font-size: 6em;
+  padding: .75em;
+}
+
+.h1{
+font-family: Arial;
+font-weight: 700;
+text-align: center;
+padding:1.25em;
+font-size: 1.56em;
+}
+
+main{
+
+  height: 28em;
+  overflow: auto;
+}
+
+footer{
+border: 1px solid grey;
+background-color: #F3F5F5;
+height: 5em;
+margin-top: 1.56em;
+font-family: Arial;
+}
+
+.textBox{
+  width:10em;
+  height: 1.8em;
+  border-radius: .9em;
+  font-size: 1.25em;
+  padding-left: .625em;
+}
+
+.sendButton{
+  margin-top: .31em;
+  font-size: 1.25em;
+  color:grey;
+  font-family: Arial;
+}
+} // end media query 22.8em

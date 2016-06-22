@@ -1,11 +1,31 @@
 $( function() {
   "use strict";
 
-  $( ".sendButton" ).on( "click", function() {
+  $( document ).ready( function() {
+    $( ".textBox" ).focus();
+  });
+
+  /*
+    thank you https://api.jquery.com/keydown/, for your help on this event.
+    if enter is pressed, it will trigger the .sendButton click
+  */
+
+  $( ".textBox" ).keypress( function(e) {
+    if(e.which == 13) {
+      $( ".sendButton" ).click();
+      e.preventDefault();
+    }
+  }); // end enter keypress event
+
+  $( ".sendButton" ).on( "click", function(e) {
+    e.preventDefault();
+
     var userMessage = $('.textBox[name="message"]').val().split( " " );
+    var userMessageUnsplit = $('.textBox[name="message"]').val();
     // thank you, http://stackoverflow.com/questions/867916/creating-a-div-element-in-jquery
-    $( "<div></div>" ).attr( "class", "userTalkBubble" ).append( userMessage ).appendTo( "main" );
+    $( "<div></div>" ).attr( "class", "userTalkBubble" ).append( userMessageUnsplit ).appendTo( "main" );
     console.log( userMessage );
+    $( ".textBox" ).focus();
 
     /*******************************************************************
       CHANGE BACKGROUND-COLOR
@@ -16,6 +36,9 @@ $( function() {
       $( "main" ).css( "background-color", userMessage[1] );
       $( "<div></div>" ).attr( "class", "botTalkBubble" ).append( "Excellent color choice!" ).appendTo( "main" );
       $( ".textBox" ).val( "" ); // reset textbox to placeholder value
+
+      // thank you http://www.electrictoolbox.com/jquery-scroll-bottom/ for your help
+      $( 'main' ).animate( {scrollTop:$(document).height()}, 'slow' );
     }
 
     /*******************************************************************
@@ -24,10 +47,32 @@ $( function() {
 
     else if( userMessage[0].toLowerCase() === "@fs" ) {
       console.log( "Entering FourSquare" );
-      var location = userMessage[1];
-      var cuisine = userMessage[2];
-      console.log( location );
-      console.log( cuisine );
+      var location;
+      var cuisine;
+
+      if( !userMessage[1].includes( "," ) ) {
+        location = userMessage[1] + "," + userMessage[2];
+        cuisine = userMessage[3];
+      }
+
+      else if( userMessage[1].includes( "," ) && userMessage.length !== 4 ) {
+        location = userMessage[1];
+        cuisine = userMessage[2];
+        console.log( location );
+        console.log( cuisine );
+      }
+
+      else if( userMessage[1].includes( "," ) && userMessage.length === 4 ){
+        location = userMessage[1] + userMessage[2];
+        cuisine = userMessage[3];
+        console.log( "Third case entered" );
+        console.log( location );
+        console.log( cuisine );
+      }
+
+      // else {
+      //
+      // }
 
       // setting up values to pass foursquare in ajax call
       var params = {
@@ -52,6 +97,9 @@ $( function() {
         $( "<div></div>" ).attr( "class", "botTalkBubble" ).text( "You should try: " +
         data.response.venues[0].name + " at " +
         data.response.venues[0].location.address ).appendTo( "main" );
+
+        // thank you http://www.electrictoolbox.com/jquery-scroll-bottom/ for your help
+        $('main').animate({scrollTop:$(document).height()}, 'slow');
         $( ".textBox" ).val( "" );
       }) // end done()
     } // end else if foursquare
@@ -62,24 +110,44 @@ $( function() {
 
     else if( userMessage[0].toLowerCase() === "@weather" ) {
       console.log( "Entering Wunderground" );
+      var weatherCity;
+      var weatherState;
+
+      if( userMessage[1].includes( "," ) ) {
+        console.log( "comma in string" );
+        console.log( userMessage[1].substr( 0, userMessage[1].length - 1 ));
+        if( userMessage.length == 2 ) {
+          var locationNoComma = userMessage[1].split( "," );
+          console.log( locationNoComma );
+          weatherCity = locationNoComma[0];
+          weatherState = locationNoComma[1];
+        }
+
+        else {
+          var weatherCity = userMessage[1].substr( 0, userMessage[1].length - 1);
+          var weatherState = userMessage[2];
+        }
+      }
 
       // begin foursquare GET request
       $.ajax( {
         datatype: "json",
-        url: "http://api.wunderground.com/api/a4a7ba047e303c3b/conditions/q/" + userMessage[1] + ".json",
+        url: "http://api.wunderground.com/api/a4a7ba047e303c3b/conditions/q/" + weatherState + "/" + weatherCity + ".json",
         method: "GET",
       } ) // end ajax GET request
 
       // if request is successful
       .done( function(data) {
         var currentTemp = data.current_observation.feelslike_string;
-        // var currentIcon = data.current_observation.icon;
-        var weatherIcon = $( "<img>" ).attr( "src", data.current_observation.icon_url );
+        var weatherIcon = $( "<img>" ).attr( "src", data.current_observation.icon_url ).addClass( "weatherIcon");
         console.log( "http://api.wunderground.com/api/a4a7ba047e303c3b/conditions/q/" + userMessage[1] + ".json" );
         console.log( currentTemp );
         console.log( data.current_observation.icon_url );
-        var weatherString = $( "<div></div>" ).attr( "class", "botTalkBubble" ).text( "You weather is comfortable " + currentTemp + " ");
+        var weatherString = $( "<div></div>" ).attr( "class", "botTalkBubble" ).text( "Your weather is a comfortable " + currentTemp + " ");
         weatherString.prepend( weatherIcon ).appendTo( "main" );
+
+        // thank you http://www.electrictoolbox.com/jquery-scroll-bottom/ for your help
+        $('main').animate({scrollTop:$(document).height()}, 'slow');
         $( ".textBox" ).val( "" );
       }) // end done()
     } // end else if wunderground
@@ -103,6 +171,9 @@ $( function() {
         var giphyImg = $( "<img>" ).attr( "src", data.data[0].images.fixed_height.url );
         console.log( giphyImg );
         $( "<div></div>" ).attr( "class", "botTalkBubble" ).html( giphyImg ).appendTo( "main" );
+
+        // thank you http://www.electrictoolbox.com/jquery-scroll-bottom/ for your help
+        $('main').animate({scrollTop:$(document).height()}, 'slow');
         $( ".textBox" ).val( "" );
       }) // end done()
     } // end else if giphy

@@ -1,0 +1,362 @@
+/******************************************************************************
+*******************************************************************************
+BEGIN MEDIA QUERY MIN-WIDTH 15EM
+*******************************************************************************
+******************************************************************************/
+@media screen and (min-width: 15em) {
+  .wrapper {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    margin-top: -1em; }
+    .wrapper:after {
+      content: " ";
+      display: block;
+      clear: both; }
+
+  main {
+    overflow: auto;
+    height: 21.65em; }
+
+  header,
+  footer {
+    background-color: #F3F5F5;
+    text-align: center; }
+
+  h1 {
+    padding-top: 1.5em;
+    padding-bottom: .75em;
+    border-bottom: 1.5px solid #d3d3d3;
+    font-family: arial;
+    font-size: 1.6em;
+    font-weight: 700; }
+
+  .botTalkBubble {
+    width: 73.68421%;
+    float: left;
+    margin-right: 5.26316%;
+    background-color: #d3d3d3;
+    float: left;
+    text-align: left;
+    border-radius: 1em;
+    padding: .43em;
+    margin-top: .75em;
+    margin-left: .5em;
+    font-family: arial; }
+
+  .userTalkBubble {
+    width: 73.68421%;
+    float: left;
+    margin-right: 5.26316%;
+    background-color: #0CA3E1;
+    float: right;
+    text-align: right;
+    border-radius: 1em;
+    padding: .43em;
+    margin-top: .75em;
+    margin-right: .5em;
+    font-family: arial;
+    color: #fff; }
+
+  img {
+    width: 11em;
+    margin: 1em 0 1em 1em; }
+
+  .weatherIcon {
+    width: 2em; }
+
+  footer {
+    padding-top: 1.15em;
+    border-top: 1.5px solid #d3d3d3; }
+
+  .textBox {
+    width: 10em;
+    height: 1.8em;
+    border-radius: .9em;
+    font-size: 1.25em;
+    margin: 0 .4em .75em .55em; }
+
+  .textBox:focus {
+    outline: none;
+    /* thank you, http://stackoverflow.com/questions/3397113/how-to-
+    remove-border-outline-around-text-input-boxes-chrome for your help */ }
+
+  .sendButton {
+    margin-top: .31em;
+    font-size: 1.25em;
+    color: grey;
+    font-family: Arial;
+    cursor: pointer; } }
+/******************************************************************************
+*******************************************************************************
+BEGIN MEDIA QUERY MIN-WIDTH 26EM
+*******************************************************************************
+******************************************************************************/
+@media screen and (min-width: 26em) {
+  .wrapper {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    margin-top: -1em; }
+    .wrapper:after {
+      content: " ";
+      display: block;
+      clear: both; }
+
+  main {
+    overflow: auto;
+    height: 22.65em; }
+
+  header,
+  footer {
+    background-color: #F3F5F5;
+    text-align: center; }
+
+  h1 {
+    padding-top: 1.5em;
+    padding-bottom: .75em;
+    border-bottom: 1.5px solid #d3d3d3;
+    font-family: arial;
+    font-size: 2em;
+    font-weight: 700; }
+
+  .botTalkBubble {
+    width: 73.68421%;
+    float: left;
+    margin-right: 5.26316%;
+    background-color: #d3d3d3;
+    float: left;
+    text-align: left;
+    border-radius: 1em;
+    padding: .65em;
+    margin-top: .75em;
+    margin-left: .5em;
+    font-family: arial;
+    font-size: 1.3em; }
+
+  .userTalkBubble {
+    width: 73.68421%;
+    float: left;
+    margin-right: 5.26316%;
+    background-color: #0CA3E1;
+    float: right;
+    text-align: right;
+    border-radius: 1em;
+    padding: .43em;
+    margin-top: .75em;
+    margin-right: .5em;
+    font-family: arial;
+    font-size: 1.3em;
+    color: #fff; }
+
+  img {
+    width: 12.5em;
+    margin: 1em 0 1em 1em; }
+
+  .weatherIcon {
+    width: 2em; }
+
+  footer {
+    padding-top: 1.15em;
+    border-top: 1.5px solid #d3d3d3; }
+
+  .textBox {
+    width: 10em;
+    height: 1.8em;
+    border-radius: .9em;
+    font-size: 1.45em;
+    margin: 0 .4em .75em .55em; }
+
+  .textBox:focus {
+    outline: none; }
+
+  .sendButton {
+    margin-top: .31em;
+    font-size: 1.45em;
+    color: grey;
+    font-family: Arial;
+    cursor: pointer; } }
+/******************************************************************************
+*******************************************************************************
+BEGIN MEDIA QUERY MIN-WIDTH 37.5EM
+*******************************************************************************
+******************************************************************************/
+@media screen and (min-width: 37.5em) {
+  .wrapper {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    margin-top: -1em; }
+    .wrapper:after {
+      content: " ";
+      display: block;
+      clear: both; }
+
+  main {
+    overflow: auto;
+    height: 27em; }
+
+  header,
+  footer {
+    background-color: #F3F5F5;
+    text-align: center; }
+
+  h1 {
+    padding-top: 1.5em;
+    padding-bottom: .75em;
+    border-bottom: 1.5px solid #d3d3d3;
+    font-family: arial;
+    font-size: 2.25em;
+    font-weight: 700; }
+
+  .botTalkBubble {
+    width: 73.68421%;
+    float: left;
+    margin-right: 5.26316%;
+    background-color: #d3d3d3;
+    float: left;
+    text-align: left;
+    border-radius: 1em;
+    padding: .65em;
+    margin-top: .75em;
+    margin-left: .5em;
+    font-family: arial;
+    font-size: 1.5em; }
+
+  .userTalkBubble {
+    width: 73.68421%;
+    float: left;
+    margin-right: 5.26316%;
+    background-color: #0CA3E1;
+    float: right;
+    text-align: right;
+    border-radius: 1em;
+    padding: .65em;
+    margin-top: .75em;
+    margin-right: .5em;
+    font-family: arial;
+    font-size: 1.5em;
+    color: #fff; }
+
+  img {
+    width: 14.5em;
+    margin: 1em 0 1em 1em; }
+
+  .weatherIcon {
+    width: 2em; }
+
+  footer {
+    padding-top: 1.15em;
+    border-top: 1.5px solid #d3d3d3; }
+
+  .textBox {
+    width: 10em;
+    height: 1.8em;
+    border-radius: .9em;
+    font-size: 1.65em;
+    margin: 0 .4em .75em .55em; }
+
+  .textBox:focus {
+    outline: none; }
+
+  .sendButton {
+    margin-top: .31em;
+    font-size: 1.65em;
+    color: grey;
+    font-family: Arial;
+    cursor: pointer; } }
+/******************************************************************************
+*******************************************************************************
+BEGIN MEDIA QUERY MIN-WIDTH 48EM
+*******************************************************************************
+******************************************************************************/
+@media screen and (min-width: 48em) {
+  .wrapper {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    margin-top: -1em; }
+    .wrapper:after {
+      content: " ";
+      display: block;
+      clear: both; }
+
+  main {
+    overflow: auto;
+    height: 33.25em; }
+
+  header,
+  footer {
+    background-color: #F3F5F5;
+    text-align: center; }
+
+  h1 {
+    padding-top: 1.5em;
+    padding-bottom: .75em;
+    border-bottom: 1.5px solid #d3d3d3;
+    font-family: arial;
+    font-size: 2.5em;
+    font-weight: 700; }
+
+  .botTalkBubble {
+    width: 73.68421%;
+    float: left;
+    margin-right: 5.26316%;
+    background-color: #d3d3d3;
+    float: left;
+    text-align: left;
+    border-radius: 1em;
+    padding: .65em;
+    margin-top: .75em;
+    margin-left: .5em;
+    font-family: arial;
+    font-size: 1.75em; }
+
+  .userTalkBubble {
+    width: 73.68421%;
+    float: left;
+    margin-right: 5.26316%;
+    background-color: #0CA3E1;
+    float: right;
+    text-align: right;
+    border-radius: 1em;
+    padding: .63em;
+    margin-top: .75em;
+    margin-right: .5em;
+    font-family: arial;
+    font-size: 1.75em;
+    color: #fff; }
+
+  img {
+    width: 14.75em;
+    margin: 1em 0 1em 1em; }
+
+  .weatherIcon {
+    width: 2.25em; }
+
+  footer {
+    padding-top: 1.15em;
+    border-top: 1.5px solid #d3d3d3; }
+
+  .textBox {
+    width: 10em;
+    height: 1.8em;
+    border-radius: .9em;
+    font-size: 1.85em;
+    margin: 0 .4em .75em .55em; }
+
+  .textBox:focus {
+    outline: none; }
+
+  .sendButton {
+    margin-top: .31em;
+    font-size: 1.85em;
+    color: grey;
+    font-family: Arial;
+    cursor: pointer; } }
+
+/*# sourceMappingURL=styles2.css.map */
