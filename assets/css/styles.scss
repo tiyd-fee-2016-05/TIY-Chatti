@@ -465,8 +465,8 @@ $bubbleFontSize: 1.35em;
   }
 
   .botTalkBubble {
-    // @include span( 3 of 4 ); // each li will take up 3 columns
-    width: auto;
+    @include span( 3 of 4 ); // each li will take up 3 columns
+    // width: auto;
     background-color: $botBg;
     float: left;
     text-align: left;
@@ -479,8 +479,8 @@ $bubbleFontSize: 1.35em;
   }
 
   .userTalkBubble{
-    // @include span( 3 of 4 ); // each li will take up 3 columns
-    width: 55%;
+    @include span( 3 of 4 ); // each li will take up 3 columns
+    // width: 55%;
     background-color: $userBg;
     float: right;
     text-align: right;

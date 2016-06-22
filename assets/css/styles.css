@@ -382,7 +382,9 @@ BEGIN MEDIA QUERY MIN-WIDTH 80EM -- LAPTOP SIZE
     font-weight: 700; }
 
   .botTalkBubble {
-    width: auto;
+    width: 73.68421%;
+    float: left;
+    margin-right: 5.26316%;
     background-color: #d3d3d3;
     float: left;
     text-align: left;
@@ -394,7 +396,9 @@ BEGIN MEDIA QUERY MIN-WIDTH 80EM -- LAPTOP SIZE
     font-size: 1.35em; }
 
   .userTalkBubble {
-    width: 55%;
+    width: 73.68421%;
+    float: left;
+    margin-right: 5.26316%;
     background-color: #0CA3E1;
     float: right;
     text-align: right;
