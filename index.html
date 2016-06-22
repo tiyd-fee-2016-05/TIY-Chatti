@@ -2,28 +2,36 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="assets/css/styles.scss">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <title>TIY-Chatti</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+      <link rel="stylesheet" href="assets/css/styles.scss">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+      <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <title>TIY-Chatti</title>
   </head>
   <body>
     <div class= "wrapper">
-    <header><h1 class="h1">Catchy App Name</h1>
+    <header><h1 class="h1">Le ChatBot</h1>
+    <div><img class="logo" src="https://image.spreadshirtmedia.com/image-server/v1/designs/11619834,width=178,height=178,version=1320836481/french-beret-cat-cute-cat-with-cigarette.png"></div>
+  </header>
 
-    </header>
     <main>
-      <div class="botTalkBubble"> <p> Hi. What can I help you with?</p>  </div>
-      <!-- <div class="userTalkBubble"> <p> Hi. Are you alive?</p>  </div> -->
-      <!-- this will be made active with JavaScript -->
-  </main>
-  <footer>
+      <div class="botTalkBubble"> <p> Bonjour. What can I help you with?</p>  </div>
+      <ul class="modal">
+        <li class="helpHeader">How to enter commands</li>
+        <li> @weather [state/city]</li>
+        <li> @giphy [image_topic]</li>
+        <li> @fs [city type_of_cuisine]</li>
+        <li>@bg [color_name or #hexcode]</li>
+      </ul>
+    </main>
+   <footer>
     <form> <i class="fa fa-camera fa-2x" aria-hidden="true"></i>
+      <!-- <span class="helpButton">Help</span> -->
     <input class="textBox" name= "message" type="text" placeholder="Type @help to begin.">
       <span class="sendButton">Send</span>
     </form>
+
   </footer>
   <script src="assets/js/chat_functions/weather.js"></script>
   <script src="assets/js/chat_functions/giphy.js"></script>
