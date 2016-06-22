@@ -70,9 +70,9 @@ $( function() {
         console.log( cuisine );
       }
 
-      // else {
-      //
-      // }
+      else {
+        console.log( "Whatever" );
+      }
 
       // setting up values to pass foursquare in ajax call
       var params = {
@@ -124,9 +124,15 @@ $( function() {
         }
 
         else {
-          var weatherCity = userMessage[1].substr( 0, userMessage[1].length - 1);
+          var weatherCity = userMessage[1];
           var weatherState = userMessage[2];
         }
+      } // end if
+
+      else {
+        console.log( "Else entered" );
+        var weatherCity = userMessage[1] + ",";
+        var weatherState = userMessage[2];
       }
 
       // begin foursquare GET request
