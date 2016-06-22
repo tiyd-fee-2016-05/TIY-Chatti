@@ -4,15 +4,16 @@ $( function() {
   $( ".sendButton" ).on( "click", function() {
   var userMessage = $('.textBox[name="message"]').val().split( " " );
   // thank you, http://stackoverflow.com/questions/867916/creating-a-div-element-in-jquery
-  $( "<div></div>" ).attr( "class", "userTalkBubble" ).append( userMessage ).appendTo( "main" );
-  console.log( userMessage );
+
 /*******************************************************************
   DISPLAY WUNDERGROUND
 *******************************************************************/
 // setting up values to pass meetup in ajax call
 
 if( userMessage[0].toLowerCase() === "@weather" ) {
-  console.log( "wunderground called" );
+  console.log( "user entered weather" );
+  $( "<div></div>" ).attr( "class", "userTalkBubble" ).append( userMessage ).appendTo( "main" );
+  console.log( userMessage );
   // $( "main" ).css( "background-color", userMessage[1] );
   // $( "<div></div>" ).attr( "class", "botTalkBubble" ).append( "Here's your weather: " ).appendTo( "main" );
   $( ".textBox" ).val( "" ); // reset textbox to placeholder value
@@ -41,10 +42,10 @@ $.ajax( {
 .done( function(data) {
   var tempFeelsLike = data.current_observation.feelslike_string;
   var weatherIcon = $( "<img>" ).attr( "src", data.current_observation.icon_url);
-  var weatherSting = $( "<div></div>" ).attr( "class", "botTalkBubble" ).text( "Here's your weather: " + tempFeelsLike);
+  var weatherSting = $( "<div></div>" ).attr( "class", "botTalkBubble" ).text( "Here's the weather in " + tempFeelsLike);
 
   weatherSting.prepend(weatherIcon).appendTo('main');
-  $( ".textBox" ).val( "" );
+  $( ".textBox" ).val( "" ); // reset textbox to placeholder value
   console.log(data.current_observation.feelslike_string
   );
 }) // end done()

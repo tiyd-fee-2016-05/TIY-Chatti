@@ -1,19 +1,18 @@
 $( function() {
   "use strict";
 
-
-
 $( ".sendButton" ).on( "click", function() {
   var userMessage = $('.textBox[name="message"]').val().split( " " );
   // thank you, http://stackoverflow.com/questions/867916/creating-a-div-element-in-jquery
-  $( "<div></div>" ).attr( "class", "userTalkBubble" ).append( userMessage ).appendTo( "main" );
-  console.log( userMessage );
+
 /*******************************************************************
   DISPLAY FOURSQUARE RESTAURANT
 *******************************************************************/
 
   if( userMessage[0].toLowerCase() === "@fs" ) {
-  console.log( "Entering FourSquare" );
+    $( "<div></div>" ).attr( "class", "userTalkBubble" ).append( userMessage ).appendTo( "main" );
+    console.log( userMessage );
+  console.log( "user entered FourSquare" );
   var location = userMessage[1];
   var cuisine = userMessage[2];
   console.log( location );
@@ -39,10 +38,10 @@ $( ".sendButton" ).on( "click", function() {
 
   // if request is successful
   .done( function(data) {
-    $( "<div></div>" ).attr( "class", "botTalkBubble" ).text( "You should try: " +
+    $( "<div></div>" ).attr( "class", "botTalkBubble" ).text( "You might enjoy: " +
     data.response.venues[0].name + " at " +
     data.response.venues[0].location.address ).appendTo( "main" );
-    $( ".textBox" ).val( "" );
+    $( ".textBox" ).val( "" ); // reset textbox to placeholder value
   }) // end done()
 } // end else if foursquare
 })

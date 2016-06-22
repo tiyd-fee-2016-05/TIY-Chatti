@@ -4,15 +4,15 @@ $( function() {
   $( ".sendButton" ).on( "click", function() {
   var userMessage = $('.textBox[name="message"]').val().split( " " );
   // thank you, http://stackoverflow.com/questions/867916/creating-a-div-element-in-jquery
-  $( "<div></div>" ).attr( "class", "userTalkBubble" ).append( userMessage ).appendTo( "main" );
-  console.log( userMessage );
+
 /*******************************************************************
   DISPLAY GIPHY
 *******************************************************************/
 
 if( userMessage[0].toLowerCase() === "@giphy" ) {
-  console.log( "Entering giphy" );
-
+  $( "<div></div>" ).attr( "class", "userTalkBubble" ).append( userMessage ).appendTo( "main" );
+  console.log( userMessage );
+  console.log( "user entered giphy" );
   // begin giphy GET request
   $.ajax( {
     dataType: "json",
@@ -25,7 +25,7 @@ if( userMessage[0].toLowerCase() === "@giphy" ) {
     var giphyImg = $( "<img>" ).attr( "src", data.data[0].images.fixed_height.url );
     console.log( giphyImg );
     $( "<div></div>" ).attr( "class", "botTalkBubble" ).html( giphyImg ).appendTo( "main" );
-    $( ".textBox" ).val( "" );
+    $( ".textBox" ).val( "" ); // reset textbox to placeholder value
   }) // end done()
 } // end else if giphy
 })
