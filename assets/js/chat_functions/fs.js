@@ -1,10 +1,10 @@
 $( function() {
   "use strict";
 
-  $( ".textBox" ).keypress( function(e) {
-    if(e.which == 13) {
-      $( ".sendButton" ).click();
+  $( ".textBox" ).off().on("keydown", function(e) {
+    if(e.which === 13) {
       e.preventDefault();
+      $( ".sendButton" ).click();
     }
   }); // end enter keypress event
 
@@ -13,7 +13,7 @@ $( function() {
   $( ".sendButton" ).on( "click", function(e) {
     e.preventDefault();
 
-    var randomNum = Math.floor( (Math.random() * 10) + 1 );
+    var randomNum = Math.floor( (Math.random() * 5) + 1 );
     var userMessage = $('.textBox[name="message"]').val().split( " " );
     var userMessageUnsplit = $('.textBox[name="message"]').val();
     // thank you, http://stackoverflow.com/questions/867916/creating-a-div-element-in-jquery
@@ -74,9 +74,18 @@ $( function() {
 
     // if request is successful
     .done( function(data) {
-      $( "<div></div>" ).attr( "class", "botTalkBubble" ).text( "You should try: " +
-      data.response.venues[randomNum].name + " at " +
-      data.response.venues[randomNum].location.address ).appendTo( "main" );
+
+      if( cuisine == "norwegian" || cuisine == "swedish" || cuisine == "ethiopian") {
+        $( "<div></div>" ).attr( "class", "botTalkBubble" ).text( "You should try: " +
+        data.response.venues[0].name + " at " +
+        data.response.venues[0].location.address ).appendTo( "main" );
+      }
+
+      else {
+        $( "<div></div>" ).attr( "class", "botTalkBubble" ).text( "You should try: " +
+        data.response.venues[randomNum].name + " at " +
+        data.response.venues[randomNum].location.address ).appendTo( "main" );
+      }
 
       // thank you http://www.electrictoolbox.com/jquery-scroll-bottom/ for your help
       $('main').animate( {scrollTop:$(document).height()}, 'slow' );

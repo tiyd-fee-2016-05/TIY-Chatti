@@ -25,7 +25,7 @@ $( function() {
       $( "<div></div>" ).attr( "class", "userTalkBubble" ).append( userMessageUnsplit ).appendTo( "main" );
       console.log( userMessage );
       // $( "main" ).css( "background-color", userMessage[1] );
-      $( "<div></div>" ).attr( "class", "botTalkBubble" ).html( "You can type in:<br>@giphy [topic] <br>@weather [state/city] <br> @fs [type of cuisine]<br>@bg [color]" ).appendTo( "main" );
+      $( "<div></div>" ).attr( "class", "botTalkBubble" ).html( "You can type in:<br>@giphy [topic] <br>@weather [city and state] <br> @fs [city, state and type of cuisine]<br>@bg [color]" ).appendTo( "main" );
       $( ".textBox" ).val( "" ); // reset textbox to placeholder value
       $( ".textBox" ).focus();
       // thank you http://www.electrictoolbox.com/jquery-scroll-bottom/ for your help

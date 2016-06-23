@@ -1,10 +1,10 @@
 $( function() {
   "use strict";
 
-  $( ".textBox" ).keypress( function(e) {
-    if(e.which == 13) {
-      $( ".sendButton" ).click();
+  $( ".textBox" ).off().on("keydown", function(e) {
+    if(e.which === 13) {
       e.preventDefault();
+      $( ".sendButton" ).click();
     }
   }); // end enter keypress event
 
