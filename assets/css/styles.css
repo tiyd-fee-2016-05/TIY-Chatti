@@ -221,7 +221,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 37.5EM
     margin-top: .75em;
     margin-left: .5em;
     font-family: arial;
-    font-size: 1.5em; }
+    font-size: 1.3em; }
 
   .userTalkBubble {
     width: 73.68421%;
@@ -235,7 +235,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 37.5EM
     margin-top: .75em;
     margin-right: .5em;
     font-family: arial;
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: #fff; }
 
   img {
@@ -252,7 +252,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 37.5EM
     width: 10em;
     height: 1.8em;
     border-radius: .9em;
-    font-size: 1.65em;
+    font-size: 1.45em;
     margin: 0 .4em .75em .55em; }
 
   .textBox:focus {
@@ -260,7 +260,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 37.5EM
 
   .sendButton {
     margin-top: .31em;
-    font-size: 1.65em;
+    font-size: 1.45em;
     color: grey;
     font-family: Arial;
     cursor: pointer; } }
@@ -306,7 +306,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 48EM -- TABLET SIZE
     margin-top: .75em;
     margin-left: .5em;
     font-family: arial;
-    font-size: 1.75em; }
+    font-size: 1.35em; }
 
   .userTalkBubble {
     width: 73.68421%;
@@ -320,7 +320,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 48EM -- TABLET SIZE
     margin-top: .75em;
     margin-right: .5em;
     font-family: arial;
-    font-size: 1.75em;
+    font-size: 1.35em;
     color: #fff; }
 
   img {
@@ -368,6 +368,8 @@ BEGIN MEDIA QUERY MIN-WIDTH 80EM -- LAPTOP SIZE
 
   main {
     overflow: auto;
+    margin: auto;
+    width: 90%;
     height: 29.5em; }
 
   header,
@@ -382,21 +384,19 @@ BEGIN MEDIA QUERY MIN-WIDTH 80EM -- LAPTOP SIZE
     font-weight: 700; }
 
   .botTalkBubble {
-    width: 73.68421%;
-    float: left;
-    margin-right: 5.26316%;
+    width: 15em;
     background-color: #d3d3d3;
-    float: left;
     text-align: left;
     border-radius: 1em;
     padding: .65em;
     margin-top: .75em;
     margin-left: .5em;
+    margin-right: 30em;
     font-family: arial;
     font-size: 1.35em; }
 
   .userTalkBubble {
-    width: 73.68421%;
+    width: 47.36842%;
     float: left;
     margin-right: 5.26316%;
     background-color: #0CA3E1;
@@ -421,7 +421,7 @@ BEGIN MEDIA QUERY MIN-WIDTH 80EM -- LAPTOP SIZE
     border-top: 1.5px solid #d3d3d3; }
 
   .textBox {
-    width: 10em;
+    width: 14em;
     height: 1.8em;
     border-radius: .9em;
     font-size: 1.35em;
