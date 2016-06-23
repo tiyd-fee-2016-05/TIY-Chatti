@@ -2,29 +2,36 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="assets/css/styles.scss">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
     <title>TIY-Chatti</title>
   </head>
   <body>
     <div class= "wrapper">
-    <header><h1 class="h1">Catchy App Name</h1>
-
+      <header><h1 class="h1">Le ChatBot</h1>
+      <div>
+        <img class="logo" src="https://image.spreadshirtmedia.com/image-server/v1/designs/11619834,width=178,height=178,version=1320836481/french-beret-cat-cute-cat-with-cigarette.png">
+      </div>
     </header>
+
     <main>
-      <div class="botTalkBubble"> <p> Hi. What can I help you with?</p>  </div>
-      <div class="userTalkBubble"> <p> Hi. Are you alive?</p>  </div>
-  </main>
-  <footer>
-    <form> <i class="fa fa-camera fa-2x" aria-hidden="true"></i>
-    <input class="textBox" name= "message" type="text" placeholder="iMessage">
-      <span class="sendButton">Send</span>
-    </form>
-  </footer>
-  <script src="assets/js/scripts.js"></script>
-</div><!-- closes wrapper div -->
+      <div class="botTalkBubble"> <p> Bonjour. What can I help you with?</p>  </div>
+    </main>
+    <footer>
+      <form> <i class="fa fa-camera fa-2x" aria-hidden="true"></i>
+        <input class="textBox" name= "message" type="text" placeholder="Type @help to begin.">
+        <span class="sendButton">Send</span>
+      </form>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="assets/js/chat_functions/weather.js"></script>
+    <script src="assets/js/chat_functions/giphy.js"></script>
+    <script src="assets/js/chat_functions/bg.js"></script>
+    <script src="assets/js/chat_functions/fs.js"></script>
+    <script src="assets/js/chat_functions/help.js"></script>
+    <script src="assets/js/scripts.js"></script>
+  </div><!-- closes wrapper div -->
   </body>
 </html>
